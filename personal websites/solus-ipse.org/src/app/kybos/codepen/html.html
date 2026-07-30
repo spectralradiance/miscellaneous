@@ -1,0 +1,57 @@
+<!-- No external dependencies required — pure vanilla JS/CSS -->
+
+<div id="outerdiv">
+  <div id="leftdiv">
+    <table>
+      <tr>
+        <td title="number of dimensions">N</td>
+        <td><input type="range" min="2" max="8" value="4" id="dim_slider"></td>
+        <td>&nbsp;<span id="dim_val">4</span>&nbsp;</td>
+      </tr>
+      <tr>
+        <td title="number of angle divisions, as a power of 2">D</td>
+        <td><input type="range" min="1" max="5" value="3" id="div_slider"></td>
+        <td>&nbsp;<span id="div_val">8</span>&nbsp;</td>
+      </tr>
+      <tr>
+        <td title="animation speed">S</td>
+        <td><input type="range" min="0" max="100" value="10" id="speed_slider"></td>
+        <td>&nbsp;<span id="speed_val">10</span>&nbsp;</td>
+      </tr>
+      <tr>
+        <td title="how accentuated transitions are between angle divisions">A</td>
+        <td><input type="range" min="0" max="99" value="95" id="acc_slider"></td>
+        <td>&nbsp;<span id="acc_val">95</span>&nbsp;</td>
+      </tr>
+      <tr>
+        <td title="line width">W</td>
+        <td><input type="range" min="1" max="20" value="4" id="lw_slider"></td>
+        <td>&nbsp;<span id="lw_val">4</span>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <div id="maindiv">
+    <canvas id="cmain"></canvas>
+  </div>
+  <div id="rightdiv">
+    <table id="angles_table">
+      <tr>
+        <td></td>
+        <td>
+          <div id="all_left_btn">&#9665;</div>
+          <div id="all_left_stop" style="display:none">||</div>
+        </td>
+        <td>
+          <div id="randomize_angles_bt">&#9860;</div>
+          <div id="reset_angles_bt">&#8676;</div>
+        </td>
+        <td>
+          <div id="all_right_btn">&#9655;</div>
+          <div id="all_right_stop" style="display:none">||</div>
+        </td>
+        <td></td>
+      </tr>
+      <!-- angle rows injected by JS -->
+    </table>
+  </div>
+</div>

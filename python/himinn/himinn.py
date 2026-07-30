@@ -185,22 +185,22 @@ if __name__ == '__main__':
     
     # img = Image.new('RGB', (640, 480), 0)
     # render_perspective(atmosphere, img)
-    # img.show()
+    # img.save('render.jpg')
     # exit()
 
 
-    n_images = 64
+    n_images = 1
     for i in range(n_images):
-        t = i/(n_images - 1.0)
+        t = 0.5 # i/(n_images - 1.0)
         angle = interpolate(-np.pi/2.0, np.pi/2.0, t)
         atmosphere.sun_direction = np.array([0.0, np.cos(angle), -np.sin(angle)])
         img = Image.new('RGB', (512, 512), 0)
         render_fisheye(atmosphere, img)
         img.save("atmosphere"+str(i)+".jpg")
 
-    images = []
-    for i in range(n_images):
-        images.append(imageio.imread("atmosphere"+str(i)+".jpg"))
-    # kargs = {'duration': 5}
-    # imageio.mimsave('atmosphere.gif', np.array(images), 'GIF', **kargs)
-    imageio.mimsave('atmosphere.gif', images)
+    # images = []
+    # for i in range(n_images):
+    #     images.append(imageio.imread("atmosphere"+str(i)+".jpg"))
+    # # kargs = {'duration': 5}
+    # # imageio.mimsave('atmosphere.gif', np.array(images), 'GIF', **kargs)
+    # imageio.mimsave('atmosphere.gif', images)

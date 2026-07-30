@@ -1,0 +1,80 @@
+<!-- No external dependencies required -->
+
+<div id="container">
+  <div id="leftdiv">
+    <div class="menu_title">image settings</div>
+    <table id="image_settings">
+      <tr>
+        <td>width</td>
+        <td><input type="text" id="img_width" value="64" /></td>
+      </tr>
+      <tr>
+        <td>height</td>
+        <td><input type="text" id="img_height" value="64" /></td>
+      </tr>
+      <tr>
+        <td>scale</td>
+        <td><input type="text" id="img_scale" value="6" /></td>
+      </tr>
+    </table>
+    <ul id="button_list">
+      <li>
+        <div style="display:inline-block" class="text_button" id="clear_bt">clear</div>&nbsp;
+        <div style="display:inline-block" class="text_button" id="save_bt">save</div>
+      </li>
+      <li>
+        <div style="display:inline-block" class="text_button" id="transparency_bt">enable transparency</div>
+      </li>
+    </ul>
+    <div class="menu_title">symmetry stack</div>
+    <table id="symmetry_list">
+      <tbody id="symmetry_tbody"></tbody>
+    </table>
+    <div id="add_symmetry_bt" class="button" title="add new symmetry">+</div>
+  </div>
+  <div id="maindiv">
+    <div id="maindivinner">
+      <table>
+        <tr>
+          <td>
+            <canvas id="cmain"></canvas>
+          </td>
+          <td valign="top">
+            <div id="minipalettediv"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="rightdiv">
+    <table id="palettediv">
+      <tbody id="palette_tbody"></tbody>
+    </table>
+    <div id="add_color_bt" class="button" title="add new color">+</div>
+  </div>
+</div>
+
+<div id="color_picker" style="display:none">
+  <table id="sliders">
+    <tr><td><canvas id="slider0"></canvas></td></tr>
+    <tr><td><canvas id="slider1"></canvas></td></tr>
+    <tr><td><canvas id="slider2"></canvas></td></tr>
+    <tr id="slider3_row" style="display:none"><td><canvas id="slider3"></canvas></td></tr>
+  </table>
+  <table id="color_picker_footer">
+    <tr>
+      <td>
+        <div id="rgb_bt" class="button active">rgb</div>
+        <div id="hsv_bt" class="button inactive">hsv</div>
+      </td>
+      <td>
+        <div id="color_picker_output_color"></div>
+        <div id="output_text"></div>
+      </td>
+      <td>
+        <div class="button" id="cp_ok_bt">ok</div>
+        <div class="button" id="cp_cancel_bt">cancel</div>
+      </td>
+    </tr>
+  </table>
+</div>

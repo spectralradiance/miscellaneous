@@ -1,0 +1,250 @@
+/* ---- Global (from styles.css) ---- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: lightgrey;
+  font-family: 'Open Sans', sans-serif;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  background-color: #FFFFFF;
+  height: 1px;
+  vertical-align: middle;
+  outline: 0;
+}
+input[type='range']::-moz-range-track {
+  -moz-appearance: none;
+  background-color: #FFFFFF;
+  height: 1px;
+  outline: 0;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background-color: #FFFFFF;
+  height: 20px;
+  width: 1px;
+}
+input[type='range']::-moz-range-thumb {
+  -moz-appearance: none;
+  background-color: #FFFFFF;
+  height: 20px;
+  width: 1px;
+}
+
+/* ---- Component ---- */
+#container {
+  font-family: 'Courier New';
+  font-size: 14px;
+}
+
+input[type=text] {
+  background-color: black;
+  color: white;
+  border: 0.5px solid dimgrey;
+  padding: 2px;
+  font-family: 'Courier New';
+}
+
+.menu_title {
+  border-bottom: 0.5px solid gray;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+#cmain {
+  border: 0.5px solid gray;
+  cursor: crosshair;
+}
+
+#maindiv > table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#container > div {
+  display: inline-block;
+}
+
+#maindiv {
+  position: absolute;
+  left: 50%;
+}
+
+#maindivinner {
+  position: relative;
+  left: -50%;
+}
+
+#leftdiv {
+  width: 300px;
+  float: left;
+  margin-left: 10px;
+}
+
+#button_list {
+  list-style: none;
+  padding-left: 4px;
+}
+
+#button_list > li {
+  margin: 6px;
+}
+
+#symmetry_list {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#symmetry_list tbody tr td {
+  width: 33%;
+  text-align: center;
+  cursor: default;
+}
+
+#symmetry_list tr td div {
+  display: inline;
+}
+
+#symmetry_list tr td {
+  min-width: 40px;
+  padding: 4px;
+}
+
+#image_settings tr td {
+  text-align: right;
+  padding: 4px;
+}
+
+#symmetry_list {
+  border: none;
+  border-collapse: collapse;
+}
+
+#symmetry_list td {
+  border-left: 0.5px solid grey;
+  border-right: 0.5px solid grey;
+}
+
+#symmetry_list td:first-child { border-left: none; }
+#symmetry_list td:last-child  { border-right: none; }
+
+#rightdiv {
+  width: 200px;
+  float: right;
+  margin-right: 10px;
+}
+
+#palettediv {
+  border: none;
+  border-collapse: collapse;
+  cursor: default;
+  width: 100%;
+  float: right;
+}
+
+#palettediv td {
+  border-left: 0.5px solid grey;
+  border-right: 0.5px solid grey;
+}
+
+#palettediv td:first-child { border-left: none; }
+#palettediv td:last-child  { border-right: none; }
+
+#palettediv tr td {
+  padding: 4px;
+}
+
+#palettediv div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#add_color_bt {
+  float: right;
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  padding-left: 4px;
+  padding-right: 4px;
+  vertical-align: middle;
+  cursor: default;
+}
+
+.button.active   { color: white; }
+.button.inactive { color: dimgray; }
+
+.minipalette {
+  border: 0.5px solid dimgrey;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin: 4px;
+  cursor: default;
+}
+
+.minipalette.eraser {
+  background-color: black;
+  text-align: center;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.text_button {
+  border: 0.5px solid dimgray;
+  cursor: default;
+  padding: 4px;
+  vertical-align: middle;
+}
+
+.shorttext {
+  width: 28px;
+  text-align: center;
+}
+
+/* ---- Color picker ---- */
+#color_picker {
+  position: fixed;
+  z-index: 100;
+  background: #111;
+  border: 2px solid dimgrey;
+  padding: 6px;
+  font-family: 'Courier New';
+  font-size: 12px;
+}
+
+#sliders {
+  border: 2px solid transparent;
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+#color_picker_output_color {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  vertical-align: middle;
+  border: 0.5px solid dimgrey;
+}
+
+#output_text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 4px;
+}
+
+#color_picker_footer {
+  width: 100%;
+  margin-top: 4px;
+}
+
+#color_picker_footer td {
+  padding: 2px 4px;
+  vertical-align: middle;
+}

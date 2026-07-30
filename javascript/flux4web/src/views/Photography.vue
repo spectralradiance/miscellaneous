@@ -76,13 +76,13 @@ export default {
   data: () => ({
     photo_folder: {
       name: "All Photos",
-      id: "????",
+      id: "19fKfAMGSC_qtod2LUVXC7A-EXuVhq3x9",
     },
     breadcrumbs: [],
     current_folder: { name: "", id: "" },
     folders: [],
     files: [],
-    drive_api_key: "????",
+    drive_api_key: "AIzaSyCDxsqwxcUqbyJcD_xL7BpxAHC7tUClZHU",
     items: [],
     index: null,
   }),
@@ -110,14 +110,14 @@ export default {
               id: d.id,
               name: d.name,
             });
-          } else {
+          } else if (d.imageMediaMetadata) {
             let shutter_speed = d.imageMediaMetadata.exposureTime;
             shutter_speed =
               (shutter_speed >= 0.5
                 ? shutter_speed
                 : "1/" + Math.round(1 / shutter_speed)) + "s";
-            let url = "https://drive.google.com/uc?id=" + d.id;
-            console.log(url);
+            let thumbUrl = "https://drive.google.com/thumbnail?id=" + d.id + "&sz=w800";
+            let fullUrl = "https://drive.google.com/thumbnail?id=" + d.id + "&sz=w2048";
             let file = {
               id: d.id,
               name: d.name,
@@ -131,7 +131,7 @@ export default {
               iso: d.imageMediaMetadata.isoSpeed,
               shutter_speed: shutter_speed,
               date_taken: d.imageMediaMetadata.time,
-              url: url,
+              url: thumbUrl,
             };
             this.files.push(file);
             this.items.push({
@@ -157,7 +157,7 @@ export default {
                 '&nbsp;&nbsp;<span style="white-space:nowrap"><i aria-hidden="true" class="v-icon notranslate mdi mdi-grid theme--dark"></i>&nbsp;' +
                 file.iso +
                 "</span>",
-              src: url,
+              src: fullUrl,
               date_taken: file.date_taken,
             });
           }

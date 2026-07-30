@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <transition-group id="tag_div" name="tags-list" tag="v-row">
+    <transition-group id="tag_div" name="tags-list" tag="div" class="row">
       <v-btn
         color="primary"
         v-for="tag in selected_tags"

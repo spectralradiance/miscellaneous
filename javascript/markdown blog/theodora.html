@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script>
+        base_url = "https://raw.githubusercontent.com/flux2341/theocentrism_writing/master/";
+        let markdown_converter = new showdown.Converter();
+        function get_file(file_name) {
+            let url = base_url + file_name;
+            $.ajax({
+                url: url, success: function (result) {
+                    let html = markdown_converter.makeHtml(result);
+                    $('#main_view').html(html);
+                    $('a').click(function(){
+                        get_file(this.getAttribute('href'));
+                        return false;
+                    });
+                }
+            });
+        }
+        $(function() {
+            get_file("index.md");
+        });
+    </script>
+</head>
+<body>
+    <div id="main_view">
+
+    </div>
+</body>
+</html>
+
+
+
+
